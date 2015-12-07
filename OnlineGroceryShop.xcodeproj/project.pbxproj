@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		21A899881C159EB8000FA9D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899871C159EB8000FA9D6 /* AppDelegate.swift */; };
-		21A8998A1C159EB8000FA9D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899891C159EB8000FA9D6 /* ViewController.swift */; };
 		21A8998D1C159EB8000FA9D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A8998B1C159EB8000FA9D6 /* Main.storyboard */; };
 		21A899901C159EB8000FA9D6 /* OnlineGroceryShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 21A8998E1C159EB8000FA9D6 /* OnlineGroceryShop.xcdatamodeld */; };
 		21A899921C159EB8000FA9D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21A899911C159EB8000FA9D6 /* Assets.xcassets */; };
 		21A899951C159EB8000FA9D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21A899931C159EB8000FA9D6 /* LaunchScreen.storyboard */; };
 		21A899A01C159EB8000FA9D6 /* OnlineGroceryShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A8999F1C159EB8000FA9D6 /* OnlineGroceryShopTests.swift */; };
 		21A899AB1C159EB8000FA9D6 /* OnlineGroceryShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899AA1C159EB8000FA9D6 /* OnlineGroceryShopUITests.swift */; };
+		21A899D41C1615D0000FA9D6 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D11C1615D0000FA9D6 /* CartViewController.swift */; };
+		21A899D51C1615D0000FA9D6 /* GroceryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D21C1615D0000FA9D6 /* GroceryCollectionViewController.swift */; };
+		21A899D61C1615D0000FA9D6 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D31C1615D0000FA9D6 /* ProductViewCell.swift */; };
+		21A899D81C1615E5000FA9D6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D71C1615E5000FA9D6 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		21A899841C159EB8000FA9D6 /* OnlineGroceryShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineGroceryShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A899871C159EB8000FA9D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21A899891C159EB8000FA9D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		21A8998C1C159EB8000FA9D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21A8998F1C159EB8000FA9D6 /* OnlineGroceryShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnlineGroceryShop.xcdatamodel; sourceTree = "<group>"; };
 		21A899911C159EB8000FA9D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		21A899A61C159EB8000FA9D6 /* OnlineGroceryShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineGroceryShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21A899AA1C159EB8000FA9D6 /* OnlineGroceryShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineGroceryShopUITests.swift; sourceTree = "<group>"; };
 		21A899AC1C159EB8000FA9D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21A899D11C1615D0000FA9D6 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartViewController.swift; path = Controller/CartViewController.swift; sourceTree = "<group>"; };
+		21A899D21C1615D0000FA9D6 /* GroceryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroceryCollectionViewController.swift; path = Controller/GroceryCollectionViewController.swift; sourceTree = "<group>"; };
+		21A899D31C1615D0000FA9D6 /* ProductViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewCell.swift; path = Controller/ProductViewCell.swift; sourceTree = "<group>"; };
+		21A899D71C1615E5000FA9D6 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Model/Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +105,9 @@
 		21A899861C159EB8000FA9D6 /* OnlineGroceryShop */ = {
 			isa = PBXGroup;
 			children = (
+				21A899D01C161592000FA9D6 /* Models */,
+				21A899CF1C16158A000FA9D6 /* Controller */,
 				21A899871C159EB8000FA9D6 /* AppDelegate.swift */,
-				21A899891C159EB8000FA9D6 /* ViewController.swift */,
 				21A8998B1C159EB8000FA9D6 /* Main.storyboard */,
 				21A899911C159EB8000FA9D6 /* Assets.xcassets */,
 				21A899931C159EB8000FA9D6 /* LaunchScreen.storyboard */,
@@ -126,6 +133,24 @@
 				21A899AC1C159EB8000FA9D6 /* Info.plist */,
 			);
 			path = OnlineGroceryShopUITests;
+			sourceTree = "<group>";
+		};
+		21A899CF1C16158A000FA9D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				21A899D11C1615D0000FA9D6 /* CartViewController.swift */,
+				21A899D21C1615D0000FA9D6 /* GroceryCollectionViewController.swift */,
+				21A899D31C1615D0000FA9D6 /* ProductViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		21A899D01C161592000FA9D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21A899D71C1615E5000FA9D6 /* Product.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21A8998A1C159EB8000FA9D6 /* ViewController.swift in Sources */,
+				21A899D51C1615D0000FA9D6 /* GroceryCollectionViewController.swift in Sources */,
+				21A899D41C1615D0000FA9D6 /* CartViewController.swift in Sources */,
+				21A899D61C1615D0000FA9D6 /* ProductViewCell.swift in Sources */,
 				21A899901C159EB8000FA9D6 /* OnlineGroceryShop.xcdatamodeld in Sources */,
 				21A899881C159EB8000FA9D6 /* AppDelegate.swift in Sources */,
+				21A899D81C1615E5000FA9D6 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +514,7 @@
 				21A899B11C159EB8000FA9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21A899B21C159EB8000FA9D6 /* Build configuration list for PBXNativeTarget "OnlineGroceryShopTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +523,7 @@
 				21A899B41C159EB8000FA9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21A899B51C159EB8000FA9D6 /* Build configuration list for PBXNativeTarget "OnlineGroceryShopUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +532,7 @@
 				21A899B71C159EB8000FA9D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
