@@ -7,12 +7,40 @@
 //
 
 import UIKit
+import CoreData
 
-class CartViewController: UIViewController {
+class CartViewController: UIViewController, UITableViewDataSource {
 
+    var groceryProducts = [NSManagedObject]()
+    private let reuseIdentifier = "SelectedItemCell"
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchSelectedItems()
+    }
+    
+    func fetchSelectedItems() {
+        //check if the local storage has the data present in the DB to be shown
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Grocery")
+        fetchRequest.predicate = NSPredicate(format: "selected = %d", 1)
+        
+        do {
+            groceryProducts =
+            try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            print("selected grocery count \(groceryProducts.count)")
+            if groceryProducts.count == 0 {
+            } else {
+                self.tableView.reloadData()
+            }
+        } catch let error as NSError {
+            print("Could not in updated selected value \(error), \(error.userInfo)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +53,24 @@ class CartViewController: UIViewController {
 //        self.navigationController?.pushViewController(paymentViewController, animated: true)
     }
 
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return groceryProducts.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SelectedProductViewCell
+        if let product: NSManagedObject = groceryProducts[indexPath.row] {
+            if let name = product.valueForKey("name") as? String {
+                cell.titleLabel.text =  name
+            }
+            if let price = product.valueForKey("price") as? String {
+                cell.priceLabel.text =  price
+            }
+        }
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

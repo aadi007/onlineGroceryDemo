@@ -127,8 +127,12 @@ class GroceryCollectionViewController: UICollectionViewController {
                 cell.priceLabel.text =  price
             }
             
-            if let _ = product.valueForKey("selected") as? Bool {
-                cell.selectedImage.hidden = false
+            if let result = product.valueForKey("selected") as? Bool {
+                if result {
+                    cell.selectedImage.hidden = false
+                } else {
+                    cell.selectedImage.hidden = true
+                }
             } else {
                 cell.selectedImage.hidden = true
             }
@@ -158,8 +162,16 @@ class GroceryCollectionViewController: UICollectionViewController {
             let fetchResults =
             try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
             if fetchResults.count != 0 {
-                let managedObject = fetchResults[0]
-                managedObject.setValue(NSNumber(bool: true), forKey: "selected")
+                let managedObject:NSManagedObject = fetchResults[0]
+                if let result = managedObject.valueForKey("selected") as? Bool {
+                    if result {
+                        managedObject.setValue(NSNumber(bool: false), forKey: "selected")
+                    } else {
+                        managedObject.setValue(NSNumber(bool: true), forKey: "selected")
+                    }
+                } else {
+                    managedObject.setValue(NSNumber(bool: true), forKey: "selected")
+                }
                 
                 do {
                     try managedContext.save()

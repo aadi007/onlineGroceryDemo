@@ -49,7 +49,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckMark" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-1B-vlc">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckMark" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-1B-vlc">
                                                     <rect key="frame" x="136" y="0.0" width="34" height="34"/>
                                                     <animations/>
                                                     <constraints>
@@ -159,6 +159,52 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="478"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectedItemCell" id="SdS-Hd-MR4" customClass="SelectedProductViewCell" customModule="OnlineGroceryShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SdS-Hd-MR4" id="P04-KL-hbb">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je0-Hk-mvM">
+                                                    <rect key="frame" x="8" y="11" width="487" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIf-rl-0Dr">
+                                                    <rect key="frame" x="495" y="11" width="97" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="M2M-CM-aYt"/>
+                                                        <constraint firstAttribute="width" constant="97" id="lLU-wf-4Zk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="je0-Hk-mvM" firstAttribute="centerY" secondItem="P04-KL-hbb" secondAttribute="centerY" id="FFj-Hm-QM7"/>
+                                                <constraint firstAttribute="trailing" secondItem="yIf-rl-0Dr" secondAttribute="trailing" constant="8" id="N6d-O0-JzB"/>
+                                                <constraint firstItem="yIf-rl-0Dr" firstAttribute="leading" secondItem="je0-Hk-mvM" secondAttribute="trailing" id="Q7t-WQ-TBy"/>
+                                                <constraint firstItem="je0-Hk-mvM" firstAttribute="leading" secondItem="P04-KL-hbb" secondAttribute="leading" constant="8" id="Zzt-hH-qZH"/>
+                                                <constraint firstItem="yIf-rl-0Dr" firstAttribute="centerY" secondItem="P04-KL-hbb" secondAttribute="centerY" id="t2u-B6-rVI"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="yIf-rl-0Dr" id="09J-Hd-hPA"/>
+                                            <outlet property="titleLabel" destination="je0-Hk-mvM" id="o0h-ld-Me4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lKZ-bz-Vyi" id="ymw-qW-rK9"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <animations/>
@@ -173,6 +219,9 @@
                             <constraint firstItem="82W-O8-RiL" firstAttribute="leading" secondItem="nnS-mD-e7F" secondAttribute="leading" id="wr1-x8-bu1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="8P0-en-pgV" id="jlB-HR-xks"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asS-Pa-MYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +285,7 @@
     </scenes>
     <resources>
         <image name="CartIcon" width="40" height="40"/>
-        <image name="CheckMark" width="600" height="600"/>
+        <image name="CheckMark" width="200" height="200"/>
         <image name="Potato" width="88" height="63"/>
     </resources>
 </document>
