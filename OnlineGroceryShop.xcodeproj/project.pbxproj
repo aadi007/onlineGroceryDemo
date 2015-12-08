@@ -20,6 +20,7 @@
 		21A899D81C1615E5000FA9D6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D71C1615E5000FA9D6 /* Product.swift */; };
 		21A899DD1C168DE8000FA9D6 /* SelectedProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899DC1C168DE8000FA9D6 /* SelectedProductViewCell.swift */; };
 		21A899DF1C169912000FA9D6 /* TotalAmountCartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899DE1C169912000FA9D6 /* TotalAmountCartViewCell.swift */; };
+		4DBFB49709E612E03E3022EA /* Pods_OnlineGroceryShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C755C9BCA966B40C0B23694 /* Pods_OnlineGroceryShop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,10 @@
 		21A899D71C1615E5000FA9D6 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Model/Product.swift; sourceTree = "<group>"; };
 		21A899DC1C168DE8000FA9D6 /* SelectedProductViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedProductViewCell.swift; path = Controller/SelectedProductViewCell.swift; sourceTree = "<group>"; };
 		21A899DE1C169912000FA9D6 /* TotalAmountCartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalAmountCartViewCell.swift; path = Controller/TotalAmountCartViewCell.swift; sourceTree = "<group>"; };
+		21A899E01C16B0C2000FA9D6 /* OnlineGroceryShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OnlineGroceryShop-Bridging-Header.h"; sourceTree = "<group>"; };
+		7C755C9BCA966B40C0B23694 /* Pods_OnlineGroceryShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineGroceryShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8CE749B401632B2CB7E7E4D /* Pods-OnlineGroceryShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceryShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnlineGroceryShop/Pods-OnlineGroceryShop.release.xcconfig"; sourceTree = "<group>"; };
+		FAD5A62B99785F9F90F2158D /* Pods-OnlineGroceryShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceryShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnlineGroceryShop/Pods-OnlineGroceryShop.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DBFB49709E612E03E3022EA /* Pods_OnlineGroceryShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,8 @@
 				21A8999E1C159EB8000FA9D6 /* OnlineGroceryShopTests */,
 				21A899A91C159EB8000FA9D6 /* OnlineGroceryShopUITests */,
 				21A899851C159EB8000FA9D6 /* Products */,
+				2AAB22D1B9932AF3CC409B41 /* Pods */,
+				29D1F050BB667E3BF2339C1A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +125,7 @@
 				21A899931C159EB8000FA9D6 /* LaunchScreen.storyboard */,
 				21A899961C159EB8000FA9D6 /* Info.plist */,
 				21A8998E1C159EB8000FA9D6 /* OnlineGroceryShop.xcdatamodeld */,
+				21A899E01C16B0C2000FA9D6 /* OnlineGroceryShop-Bridging-Header.h */,
 			);
 			path = OnlineGroceryShop;
 			sourceTree = "<group>";
@@ -159,6 +168,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		29D1F050BB667E3BF2339C1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C755C9BCA966B40C0B23694 /* Pods_OnlineGroceryShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AAB22D1B9932AF3CC409B41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAD5A62B99785F9F90F2158D /* Pods-OnlineGroceryShop.debug.xcconfig */,
+				A8CE749B401632B2CB7E7E4D /* Pods-OnlineGroceryShop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -166,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21A899AF1C159EB8000FA9D6 /* Build configuration list for PBXNativeTarget "OnlineGroceryShop" */;
 			buildPhases = (
+				C920AFDF16B7C2E680C85D82 /* Check Pods Manifest.lock */,
 				21A899801C159EB8000FA9D6 /* Sources */,
 				21A899811C159EB8000FA9D6 /* Frameworks */,
 				21A899821C159EB8000FA9D6 /* Resources */,
+				9E223A72A36DB20E0B86FFB8 /* Embed Pods Frameworks */,
+				22F99639FE2CDF3971488FF4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,6 +313,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22F99639FE2CDF3971488FF4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnlineGroceryShop/Pods-OnlineGroceryShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E223A72A36DB20E0B86FFB8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OnlineGroceryShop/Pods-OnlineGroceryShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C920AFDF16B7C2E680C85D82 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		21A899801C159EB8000FA9D6 /* Sources */ = {
@@ -435,23 +512,30 @@
 		};
 		21A899B01C159EB8000FA9D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAD5A62B99785F9F90F2158D /* Pods-OnlineGroceryShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OnlineGroceryShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aadeshWorld.OnlineGroceryShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnlineGroceryShop/OnlineGroceryShop-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		21A899B11C159EB8000FA9D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8CE749B401632B2CB7E7E4D /* Pods-OnlineGroceryShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OnlineGroceryShop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aadeshWorld.OnlineGroceryShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnlineGroceryShop/OnlineGroceryShop-Bridging-Header.h";
 			};
 			name = Release;
 		};

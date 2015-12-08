@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CartViewController: UIViewController, UITableViewDataSource {
+class CartViewController: UIViewController, UITableViewDataSource, PayPalPaymentDelegate {
 
     var groceryProducts = [NSManagedObject]()
     private let reuseIdentifier = "SelectedItemCell"
@@ -17,8 +17,36 @@ class CartViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     private var totalAmount = 0
     
+    var payPalConfig = PayPalConfiguration()
+    var enviornment: String = PayPalEnvironmentNoNetwork {
+        willSet(newEnviornment) {
+            if newEnviornment != enviornment {
+                PayPalMobile.preconnectWithEnvironment(newEnviornment)
+            }
+        }
+    }
+    #if HAS_CARDIO
+    var acceptCreditCards: Bool = true {
+        didSet {
+        payPalConfig.acceptCreditCards = acceptCreditCards
+        }
+    }
+    #else
+    var acceptCreditCards: Bool = false {
+        didSet {
+            payPalConfig.acceptCreditCards = acceptCreditCards
+        }
+    }
+    #endif
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        payPalConfig.acceptCreditCards = acceptCreditCards
+        payPalConfig.merchantName = "Aadi's World"
+        payPalConfig.languageOrLocale = NSLocale.preferredLanguages()[0] 
+        payPalConfig.payPalShippingAddressOption = .PayPal
+        PayPalMobile.preconnectWithEnvironment(enviornment)
         fetchSelectedItems()
     }
     
@@ -86,6 +114,19 @@ class CartViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    
+    //PayPal payment delegates
+    func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
+        print("PayPal payment cancelled")
+        paymentViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
+        print("PayPal payment completed")
+        paymentViewController.dismissViewControllerAnimated(true) { () -> Void in
+            print("proof of payment \(completedPayment.confirmation)")
+        }
+    }
     /*
     // MARK: - Navigation
 
