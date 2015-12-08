@@ -153,6 +153,9 @@ class CartViewController: UIViewController, UITableViewDataSource, PayPalPayment
         paymentViewController.dismissViewControllerAnimated(true) { () -> Void in
             print("proof of payment \(completedPayment.confirmation)")
         }
+        let alert = UIAlertView(title: "Payment Successfull!", message: "Order placed", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok")
+        alert.show()
+        self.navigationController?.popViewControllerAnimated(false)
     }
     /*
     // MARK: - Navigation
