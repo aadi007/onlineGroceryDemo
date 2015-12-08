@@ -79,6 +79,18 @@ class CartViewController: UIViewController, UITableViewDataSource, PayPalPayment
     }
     
     @IBAction func MakePaymentButtonClicked(sender: AnyObject) {
+        //add the item to the paypal account for payment 
+        let item1 = PayPalItem(name: "aadiWorld", withQuantity: 1, withPrice: NSDecimalNumber(string: "14.2"), withCurrency: "USD", withSku: "aadiWorld-001")
+        let items = [item1]
+        let subTotal = PayPalItem.totalPriceForItems(items)
+        let payment = PayPalPayment(amount: subTotal, currencyCode: "USD", shortDescription: "AddWorldTesting", intent: .Sale)
+        payment.items = items
+        if payment.processable {
+           let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
+            presentViewController(paymentViewController, animated: true, completion: nil)
+        } else {
+            
+        }
     }
 
 
