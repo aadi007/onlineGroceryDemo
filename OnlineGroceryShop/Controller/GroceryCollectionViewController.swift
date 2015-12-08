@@ -16,8 +16,7 @@ class GroceryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+//        deleteAllData("Grocery")
         fetchGroceriesLocally()
         self.collectionView?.allowsMultipleSelection = true
     }
@@ -51,13 +50,40 @@ class GroceryCollectionViewController: UICollectionViewController {
     
     func addDummyData() {
         for index in 0..<10 {
-            var name = "Apple"
+            var name = "Onion"
             if index % 3 == 0 {
-                name = "Banana"
+                name = "Potato"
             } else if index % 3 == 1 {
-                name = "Guava"
+                name = "Tomato"
             }
-            saveProduct(Product.init(productName: name, productId: Int16(index), productPrice: "\(index)/kg"))
+            saveProduct(Product.init(productName: name, productId: Int16(index), productPrice: "\(index + 2)/kg"))
+        }
+    }
+    
+    func deleteAllData(entity: String)
+    {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: entity)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                managedContext.deleteObject(managedObjectData)
+            }
+            
+            do {
+                try managedContext.save()
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+            
+        } catch let error as NSError {
+            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
         }
     }
     
@@ -122,6 +148,9 @@ class GroceryCollectionViewController: UICollectionViewController {
         if let product: NSManagedObject = groceryProducts[indexPath.row] {
             if let name = product.valueForKey("name") as? String {
                 cell.nameLabel.text =  name
+                if let image = UIImage(named: name) {
+                    cell.imageView.image = image
+                }
             }
             if let price = product.valueForKey("price") as? String {
                 cell.priceLabel.text =  price

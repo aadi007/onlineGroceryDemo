@@ -28,7 +28,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Potato" translatesAutoresizingMaskIntoConstraints="NO" id="O19-fL-QvG">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O19-fL-QvG">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                             <animations/>
                                         </imageView>
@@ -312,6 +312,5 @@
     <resources>
         <image name="CartIcon" width="40" height="40"/>
         <image name="CheckMark" width="300" height="300"/>
-        <image name="Potato" width="88" height="63"/>
     </resources>
 </document>
