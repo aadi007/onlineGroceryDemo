@@ -49,15 +49,25 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CheckMark" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-1B-vlc">
+                                                    <rect key="frame" x="136" y="0.0" width="34" height="34"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="34" id="Ypc-Pc-OgJ"/>
+                                                        <constraint firstAttribute="width" constant="34" id="m4X-bJ-aNe"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FX2-1B-vlc" secondAttribute="trailing" id="5Hn-bw-LlS"/>
                                                 <constraint firstItem="WSs-jR-EEo" firstAttribute="centerY" secondItem="vp6-O2-nPg" secondAttribute="centerY" id="6Z2-lh-UDk"/>
                                                 <constraint firstItem="CUC-cH-VSw" firstAttribute="top" relation="lessThanOrEqual" secondItem="vp6-O2-nPg" secondAttribute="top" constant="141" id="FeP-Gs-WVW"/>
                                                 <constraint firstAttribute="bottom" secondItem="CUC-cH-VSw" secondAttribute="bottom" constant="8" id="IAO-we-dSY"/>
                                                 <constraint firstAttribute="trailing" secondItem="CUC-cH-VSw" secondAttribute="trailing" constant="8" id="YE8-zf-ad7"/>
                                                 <constraint firstItem="WSs-jR-EEo" firstAttribute="leading" secondItem="vp6-O2-nPg" secondAttribute="leading" constant="8" id="Yrt-MT-eIb"/>
+                                                <constraint firstItem="FX2-1B-vlc" firstAttribute="top" secondItem="vp6-O2-nPg" secondAttribute="top" id="gMT-fM-JTK"/>
                                                 <constraint firstAttribute="trailing" secondItem="WSs-jR-EEo" secondAttribute="trailing" constant="8" id="ldU-eA-QGx"/>
                                                 <constraint firstItem="CUC-cH-VSw" firstAttribute="leading" secondItem="vp6-O2-nPg" secondAttribute="leading" constant="8" id="ruQ-Y1-dSx"/>
                                             </constraints>
@@ -81,6 +91,7 @@
                                     <outlet property="imageView" destination="O19-fL-QvG" id="T4z-MV-lMY"/>
                                     <outlet property="nameLabel" destination="CUC-cH-VSw" id="kFf-jn-8AO"/>
                                     <outlet property="priceLabel" destination="WSs-jR-EEo" id="obV-Yx-FGY"/>
+                                    <outlet property="selectedImage" destination="FX2-1B-vlc" id="2dU-m4-SZe"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -225,6 +236,7 @@
     </scenes>
     <resources>
         <image name="CartIcon" width="40" height="40"/>
+        <image name="CheckMark" width="600" height="600"/>
         <image name="Potato" width="88" height="63"/>
     </resources>
 </document>

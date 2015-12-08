@@ -126,13 +126,52 @@ class GroceryCollectionViewController: UICollectionViewController {
             if let price = product.valueForKey("price") as? String {
                 cell.priceLabel.text =  price
             }
+            
+            if let _ = product.valueForKey("selected") as? Bool {
+                cell.selectedImage.hidden = false
+            } else {
+                cell.selectedImage.hidden = true
+            }
         }
     
         return cell
     }
-
+    
     // MARK: UICollectionViewDelegate
-
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let product: NSManagedObject = groceryProducts[indexPath.row] {
+            if let number = product.valueForKey("id") as? NSNumber {
+                selectItemIfNotSelected(Int16(number.integerValue))
+            }
+        }
+        collectionView.reloadItemsAtIndexPaths([indexPath])
+    }
+    
+    func selectItemIfNotSelected(productId: Int16) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Grocery")
+        fetchRequest.predicate = NSPredicate(format: "id = %d", productId)
+        
+        do {
+            let fetchResults =
+            try managedContext.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+            if fetchResults.count != 0 {
+                let managedObject = fetchResults[0]
+                managedObject.setValue(NSNumber(bool: true), forKey: "selected")
+                
+                do {
+                    try managedContext.save()
+                } catch let error as NSError  {
+                    print("Could not save in updated selected \(error), \(error.userInfo)")
+                }
+            }
+        } catch let error as NSError {
+            print("Could not in updated selected value \(error), \(error.userInfo)")
+        }
+    }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
