@@ -212,6 +212,7 @@ class GroceryCollectionViewController: UICollectionViewController {
         } catch let error as NSError {
             print("Could not in updated selected value \(error), \(error.userInfo)")
         }
+
     }
     
     /*

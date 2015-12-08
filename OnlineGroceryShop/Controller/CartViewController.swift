@@ -80,8 +80,23 @@ class CartViewController: UIViewController, UITableViewDataSource, PayPalPayment
     
     @IBAction func MakePaymentButtonClicked(sender: AnyObject) {
         //add the item to the paypal account for payment 
-        let item1 = PayPalItem(name: "aadiWorld", withQuantity: 1, withPrice: NSDecimalNumber(string: "14.2"), withCurrency: "USD", withSku: "aadiWorld-001")
-        let items = [item1]
+        var items = [PayPalItem]()
+        for product in groceryProducts {
+            var itemName = "item"
+            var itemPrice = "14.2"
+            if let name = product.valueForKey("name") as? String {
+                itemName =  name
+            }
+            if let price = product.valueForKey("price") as? String {
+                let components = price.componentsSeparatedByString("/")
+                if let amount = components.first {
+                    itemPrice = amount
+                }
+            }
+
+            let item1 = PayPalItem(name: itemName, withQuantity: 1, withPrice: NSDecimalNumber(string: itemPrice), withCurrency: "USD", withSku: "aadiWorld-\(index)")
+            items.append(item1)
+        }
         let subTotal = PayPalItem.totalPriceForItems(items)
         let payment = PayPalPayment(amount: subTotal, currencyCode: "USD", shortDescription: "AddWorldTesting", intent: .Sale)
         payment.items = items
