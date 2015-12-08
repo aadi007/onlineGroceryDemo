@@ -19,6 +19,7 @@
 		21A899D61C1615D0000FA9D6 /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D31C1615D0000FA9D6 /* ProductViewCell.swift */; };
 		21A899D81C1615E5000FA9D6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899D71C1615E5000FA9D6 /* Product.swift */; };
 		21A899DD1C168DE8000FA9D6 /* SelectedProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899DC1C168DE8000FA9D6 /* SelectedProductViewCell.swift */; };
+		21A899DF1C169912000FA9D6 /* TotalAmountCartViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A899DE1C169912000FA9D6 /* TotalAmountCartViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		21A899D31C1615D0000FA9D6 /* ProductViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductViewCell.swift; path = Controller/ProductViewCell.swift; sourceTree = "<group>"; };
 		21A899D71C1615E5000FA9D6 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Product.swift; path = Model/Product.swift; sourceTree = "<group>"; };
 		21A899DC1C168DE8000FA9D6 /* SelectedProductViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectedProductViewCell.swift; path = Controller/SelectedProductViewCell.swift; sourceTree = "<group>"; };
+		21A899DE1C169912000FA9D6 /* TotalAmountCartViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TotalAmountCartViewCell.swift; path = Controller/TotalAmountCartViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				21A899D21C1615D0000FA9D6 /* GroceryCollectionViewController.swift */,
 				21A899D31C1615D0000FA9D6 /* ProductViewCell.swift */,
 				21A899DC1C168DE8000FA9D6 /* SelectedProductViewCell.swift */,
+				21A899DE1C169912000FA9D6 /* TotalAmountCartViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				21A899DD1C168DE8000FA9D6 /* SelectedProductViewCell.swift in Sources */,
 				21A899D61C1615D0000FA9D6 /* ProductViewCell.swift in Sources */,
 				21A899901C159EB8000FA9D6 /* OnlineGroceryShop.xcdatamodeld in Sources */,
+				21A899DF1C169912000FA9D6 /* TotalAmountCartViewCell.swift in Sources */,
 				21A899881C159EB8000FA9D6 /* AppDelegate.swift in Sources */,
 				21A899D81C1615E5000FA9D6 /* Product.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  SelectedProductViewCell.swift
+//  TotalAmountCartViewCell.swift
 //  OnlineGroceryShop
 //
 //  Created by Aadesh Maheshwari on 08/12/15.
@@ -8,12 +8,9 @@
 
 import UIKit
 
-class SelectedProductViewCell: UITableViewCell {
+class TotalAmountCartViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    
+    @IBOutlet weak var totalAmountLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

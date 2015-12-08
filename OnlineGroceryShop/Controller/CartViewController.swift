@@ -13,7 +13,9 @@ class CartViewController: UIViewController, UITableViewDataSource {
 
     var groceryProducts = [NSManagedObject]()
     private let reuseIdentifier = "SelectedItemCell"
+    private let totalAmountIdentifier = "TotalPriceCell"
     @IBOutlet weak var tableView: UITableView!
+    private var totalAmount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,26 +51,39 @@ class CartViewController: UIViewController, UITableViewDataSource {
     }
     
     @IBAction func MakePaymentButtonClicked(sender: AnyObject) {
-//        let paymentViewController = PaymentViewController()
-//        self.navigationController?.pushViewController(paymentViewController, animated: true)
     }
 
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groceryProducts.count
+        var tableCount = groceryProducts.count
+        if tableCount > 0 {
+            tableCount++
+        }
+        return tableCount
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SelectedProductViewCell
-        if let product: NSManagedObject = groceryProducts[indexPath.row] {
-            if let name = product.valueForKey("name") as? String {
-                cell.titleLabel.text =  name
+        if indexPath.row == groceryProducts.count {
+            let cell = tableView.dequeueReusableCellWithIdentifier(totalAmountIdentifier, forIndexPath: indexPath) as! TotalAmountCartViewCell
+            cell.totalAmountLabel.text = "\(totalAmount)"
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SelectedProductViewCell
+            if let product: NSManagedObject = groceryProducts[indexPath.row] {
+                if let name = product.valueForKey("name") as? String {
+                    cell.titleLabel.text =  name
+                }
+                if let price = product.valueForKey("price") as? String {
+                    cell.priceLabel.text =  price
+                    let components = price.componentsSeparatedByString("/")
+                    if let amount = components.first {
+                        cell.amountLabel.text = amount
+                        totalAmount += Int(amount)!
+                    }
+                }
             }
-            if let price = product.valueForKey("price") as? String {
-                cell.priceLabel.text =  price
-            }
+            return cell
         }
-        return cell
     }
     
     /*

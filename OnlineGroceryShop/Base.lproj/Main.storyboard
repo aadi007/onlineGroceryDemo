@@ -168,14 +168,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="je0-Hk-mvM">
-                                                    <rect key="frame" x="8" y="11" width="487" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="414" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIf-rl-0Dr">
-                                                    <rect key="frame" x="495" y="11" width="97" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIf-rl-0Dr">
+                                                    <rect key="frame" x="422" y="11" width="97" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="M2M-CM-aYt"/>
@@ -185,20 +185,83 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-RN-f3N">
+                                                    <rect key="frame" x="529" y="11" width="63" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="R8n-Co-rG2"/>
+                                                        <constraint firstAttribute="width" constant="63" id="k5G-1j-1wo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="AJf-RN-f3N" firstAttribute="centerY" secondItem="yIf-rl-0Dr" secondAttribute="centerY" id="A4o-EC-uBL"/>
                                                 <constraint firstItem="je0-Hk-mvM" firstAttribute="centerY" secondItem="P04-KL-hbb" secondAttribute="centerY" id="FFj-Hm-QM7"/>
-                                                <constraint firstAttribute="trailing" secondItem="yIf-rl-0Dr" secondAttribute="trailing" constant="8" id="N6d-O0-JzB"/>
+                                                <constraint firstAttribute="trailing" secondItem="yIf-rl-0Dr" secondAttribute="trailing" constant="100" id="N6d-O0-JzB"/>
                                                 <constraint firstItem="yIf-rl-0Dr" firstAttribute="leading" secondItem="je0-Hk-mvM" secondAttribute="trailing" id="Q7t-WQ-TBy"/>
                                                 <constraint firstItem="je0-Hk-mvM" firstAttribute="leading" secondItem="P04-KL-hbb" secondAttribute="leading" constant="8" id="Zzt-hH-qZH"/>
+                                                <constraint firstAttribute="trailing" secondItem="AJf-RN-f3N" secondAttribute="trailing" constant="8" id="pGm-LE-MOc"/>
+                                                <constraint firstItem="AJf-RN-f3N" firstAttribute="leading" secondItem="yIf-rl-0Dr" secondAttribute="trailing" constant="10" id="q6y-3I-Wro"/>
                                                 <constraint firstItem="yIf-rl-0Dr" firstAttribute="centerY" secondItem="P04-KL-hbb" secondAttribute="centerY" id="t2u-B6-rVI"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="N6d-O0-JzB"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="AJf-RN-f3N" id="e3x-Ra-TnU"/>
+                                            <outlet property="priceLabel" destination="yIf-rl-0Dr" id="09J-Hd-hPA"/>
+                                            <outlet property="titleLabel" destination="je0-Hk-mvM" id="o0h-ld-Me4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TotalPriceCell" id="2uV-pL-6h4" customClass="TotalAmountCartViewCell" customModule="OnlineGroceryShop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2uV-pL-6h4" id="sQ2-lJ-8fj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE4-Tz-W4P">
+                                                    <rect key="frame" x="422" y="11" width="46" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="cbS-cG-kB0"/>
+                                                        <constraint firstAttribute="width" constant="46" id="jaK-RR-yTI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iCd-fR-Ey5">
+                                                    <rect key="frame" x="528" y="11" width="64" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="64" id="mbV-gZ-KSE"/>
+                                                        <constraint firstAttribute="height" constant="21" id="phh-Sf-l8t"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="iCd-fR-Ey5" firstAttribute="leading" secondItem="rE4-Tz-W4P" secondAttribute="trailing" constant="60" id="7HC-vA-uwa"/>
+                                                <constraint firstAttribute="trailing" secondItem="iCd-fR-Ey5" secondAttribute="trailing" constant="8" id="YdZ-wn-683"/>
+                                                <constraint firstItem="iCd-fR-Ey5" firstAttribute="centerY" secondItem="sQ2-lJ-8fj" secondAttribute="centerY" id="gDU-yX-hJM"/>
+                                                <constraint firstItem="iCd-fR-Ey5" firstAttribute="centerY" secondItem="rE4-Tz-W4P" secondAttribute="centerY" id="p8J-Hc-plY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="priceLabel" destination="yIf-rl-0Dr" id="09J-Hd-hPA"/>
-                                            <outlet property="titleLabel" destination="je0-Hk-mvM" id="o0h-ld-Me4"/>
+                                            <outlet property="totalAmountLabel" destination="iCd-fR-Ey5" id="StO-sz-KZI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -285,7 +348,7 @@
     </scenes>
     <resources>
         <image name="CartIcon" width="40" height="40"/>
-        <image name="CheckMark" width="200" height="200"/>
+        <image name="CheckMark" width="300" height="300"/>
         <image name="Potato" width="88" height="63"/>
     </resources>
 </document>
