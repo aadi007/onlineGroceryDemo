@@ -49,15 +49,16 @@ class GroceryCollectionViewController: UICollectionViewController {
     }
     
     func addDummyData() {
-        for index in 0..<10 {
-            var name = "Onion"
-            if index % 3 == 0 {
-                name = "Potato"
-            } else if index % 3 == 1 {
-                name = "Tomato"
-            }
-            saveProduct(Product.init(productName: name, productId: Int16(index), productPrice: "\(index + 2)/kg"))
-        }
+        saveProduct(Product.init(productName: "Potato", productId: Int16(0), productPrice: "20/kg"))
+        saveProduct(Product.init(productName: "Tomato", productId: Int16(1), productPrice: "30/kg"))
+        saveProduct(Product.init(productName: "Onion", productId: Int16(2), productPrice: "15/kg"))
+        saveProduct(Product.init(productName: "CauliFlower", productId: Int16(3), productPrice: "40/kg"))
+        saveProduct(Product.init(productName: "SunFlowerOil", productId: Int16(4), productPrice: "99/Lit"))
+        saveProduct(Product.init(productName: "LadyFinger", productId: Int16(5), productPrice: "60/kg"))
+        saveProduct(Product.init(productName: "Brinjal", productId: Int16(6), productPrice: "30/kg"))
+        saveProduct(Product.init(productName: "Peas", productId: Int16(7), productPrice: "70/kg"))
+        saveProduct(Product.init(productName: "Spinach", productId: Int16(8), productPrice: "50/kg"))
+        saveProduct(Product.init(productName: "Groundnut", productId: Int16(9), productPrice: "40/kg"))
     }
     
     func deleteAllData(entity: String)
